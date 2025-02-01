@@ -1,12 +1,16 @@
 import React from 'react';
-import {Button, HStack} from "@chakra-ui/react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import HomePage from "./components/app/HomePage";
+import Menu from "./components/app/Menu";
 
 const App = () => {
   return (
-      <HStack>
-        <Button>Click me</Button>
-        <Button>Click me</Button>
-      </HStack>
+      <BrowserRouter>
+      <Routes>
+          <Route index element={<HomePage />} />
+          <Route exact path="/menu" element={<Menu />} />
+      </Routes>
+      </BrowserRouter>
   )
 }
 
